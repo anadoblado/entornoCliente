@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prueba función attr()</title>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+document.getElementById("imagen1").addEventListener("mouseenter",cambiarimagen1,false);
+document.getElementById("imagen1").addEventListener("mouseout",restaurarimagen1,false);
+document.getElementById("imagen2").addEventListener("mouseenter",cambiarimagen2,false);
+document.getElementById("imagen2").addEventListener("mouseout",restaurarimagen2,false);
+document.getElementById("imagen3").addEventListener("mouseenter",cambiarimagen3,false);
+document.getElementById("imagen3").addEventListener("mouseout",restaurarimagen3,false);
+});
+function cambiarimagen1(){
+$("#imagen1").attr("src","imgs/deporte.jpg");
+}
+function restaurarimagen1(){
+$("#imagen1").attr("src","imgs/arbol.jpg");
+}
+function cambiarimagen2(){
+$("#imagen2").attr("src","imgs/murillo.jpg");
+}
+function restaurarimagen2(){
+$("#imagen2").attr("src","imgs/deporte.jpg");
+}
+function cambiarimagen3(){
+$("#imagen3").attr("src","imgs/deporte.jpg");
+}
+function restaurarimagen3(){
+$("#imagen3").attr("src","imgs/murillo.jpg");
+}
+</script>
+</head>
+<body>
+	<div id="galeria">
+		<img src="imgs/arbol.jpg" width="250" height="175" id="imagen1" >
+		<img src="imgs/deporte.jpg" width="250" height="175" id="imagen2" >
+		<img src="imgs/murillo.jpg" width="250" height="175" id="imagen3" >
+	</div>
+</body>
+</html>

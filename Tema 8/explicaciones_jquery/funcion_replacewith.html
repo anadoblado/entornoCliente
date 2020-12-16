@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prueba función ReplaceWith</title>
+<style>
+img{
+	float:left;
+	margin:15px;
+	width:300px;
+	height:300px;
+}
+#imagen1,#imagen2,#imagen3{
+	float:left;
+	margin:15px;
+	width:300px;
+	height:300px;
+	font-size:36px;
+	text-align:center;
+}
+</style>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+
+var imagenes=document.querySelectorAll("#galeria img");
+var imagenes2=$("img");
+console.log(imagenes2);
+for (var i=0;i<imagenes2.length;i++)
+	{
+	imagenes2[i].addEventListener("click",sustituir,false); 
+	};
+});
+function sustituir(num)  		//al poner el parámetro num lo que hacemos es capturar 
+{						 		//el objeto que ha causado el evento
+if (num.target==imagen1) // target devuelve el elemento del DOM que provocó el evento.
+	{    $("#imagen1").replaceWith("<H2><div id='imagen1'>Imagen sustituida</div></H2>" );    };
+if (num.target==imagen2)
+	{     $("#imagen2").replaceWith("<h3><div id='imagen2'>Imagen sustituida</div></h3>");    };
+if (num.target==imagen3)
+	{     $("#imagen3").replaceWith("<h4><div id='imagen2'>Imagen sustituida</div></h4>");    };
+}
+</script>
+<div id="galeria">
+<img src="imgs/arbol.jpg" width="250" height="175" id="imagen1">&nbsp
+<img src="imgs/deporte.jpg" width="250" height="175" id="imagen2">&nbsp
+<img src="imgs/murillo.jpg" width="250" height="175" id="imagen3">
+</div>
+</body>
+</html>

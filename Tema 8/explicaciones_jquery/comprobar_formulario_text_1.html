@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+.contenedor{	background-color:red  }
+</style>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+function validar(){
+var entrada=document.getElementById("usuario").value;
+if (entrada=="")
+	{
+	$("#usuario").after("El campo usuario es obligatorio");
+	}
+}
+</script>
+</head>
+<body>
+<form action="" method="get">
+<input name="usuario" type="text" id="usuario"><br>
+<input name="password" type="password" id="password"><br>
+<input type="button" value="Enviar" onclick="validar()">
+</form>
+</body>
+</html>
+

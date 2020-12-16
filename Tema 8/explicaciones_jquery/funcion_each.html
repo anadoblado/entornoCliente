@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prueba función each()</title>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+document.getElementById("boton1").addEventListener("click",comprobareach,false);
+});
+function comprobareach()
+{
+$("img").each(function(){$(this).fadeOut(3000).fadeIn(5000).width("350").height("350")});
+}
+</script>
+</head>
+<body>
+<div id="galeria">
+<img src="imgs/arbol.jpg" width="250" height="175" id="imagen1">
+<img src="imgs/deporte.jpg" width="250" height="175" id="imagen2">
+<img src="imgs/murillo.jpg" width="250" height="175" id="imagen3">
+</div>
+<div id="contenedorboton">
+<input type="button" id="boton1" value="comprobar funcionamiento each">
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Galería de Imágenes</title>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+	$(function(){
+		function mostrar(){
+		$("img").show(4000);
+		}
+		function ocultar(){
+		$("img").hide(2000).show(10000);
+		}
+	document.getElementById("ocultar").addEventListener('click',ocultar,false);
+	document.getElementById("mostrar").addEventListener('click',mostrar,false);
+	});
+</script>
+</head>
+<body>
+<div id="galeria">
+<img src="imgs/arbol.jpg" width="250" height="175">
+&nbsp
+<img src="imgs/deporte.jpg" width="250" height="175">
+&nbsp
+<img src="imgs/murillo.jpg" width="250" height="175">
+</div>
+
+<input type="button" id="ocultar" value="Ocultar" >
+<input type="button" id="mostrar" value="Mostrar" >
+
+</body>
+</html>

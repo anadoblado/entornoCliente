@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prueba de Eventos</title>
+<style>
+#parrafo1,#parrafo2,#parrafo3,#parrafo4{
+	display:none;
+}
+p{
+	width:30%;
+	margin:0 400px;
+	float:left;
+	border:red solid 2px;
+	padding:20px;
+}
+</style>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+$(function(){
+
+$('#imagen1').on({
+  click: function() {
+    console.log('Hemos hecho click sobre la imagen');
+  },
+  mouseenter: function() {
+    console.log('Nos hemos situado sobre la imagen');
+  },
+  mousemove: function() {
+    console.log('Nos estamos moviendo sobre la imagen');
+  },
+  mouseout: function() {
+    console.log('Nos hemos situado fuera de la imagen');
+  }
+});
+
+
+
+$("#lista1").mouseenter(vernoticia1);
+function vernoticia1(){
+document.getElementById("parrafo1").style.display = "block";
+};
+
+$("#lista1").mouseout(quitarnoticia1);
+function quitarnoticia1(){
+document.getElementById("parrafo1").style.display = "none";
+};
+
+$("#lista2").mouseover(vernoticia2);
+function vernoticia2(){
+$("#parrafo2").css("display","block");
+};
+
+$("#lista2").mouseout(quitarnoticia2);
+function quitarnoticia2(){
+document.getElementById("parrafo2").style.display = "none";
+};
+
+$("#lista3").mouseover(vernoticia3);
+function vernoticia3(){
+document.getElementById("parrafo3").style.display = "block";
+};
+
+$("#lista3").mouseout(quitarnoticia3);
+function quitarnoticia3(){
+document.getElementById("parrafo3").style.display = "none";
+};
+
+$("#lista4").mouseover(vernoticia4);
+function vernoticia4(){
+document.getElementById("parrafo4").style.display = "block";
+};
+
+$("#lista4").mouseout(quitarnoticia4);
+function quitarnoticia4(){
+document.getElementById("parrafo4").style.display = "none";
+};
+
+$("#nombre").mouseover(preparartexto);
+function preparartexto(){
+document.getElementById("nombre").value="";
+document.getElementById("nombre").value="haga clic aquí y escriba";
+};
+
+$("#nombre").mouseout(borrartexto);
+function borrartexto(){
+document.getElementById("nombre").value="";
+};
+
+$("#nombre").click(escribatexto);
+function escribatexto(){
+document.getElementById("nombre").value="";
+};
+
+
+});
+</script>
+</head>
+<body>
+
+<div id ="contenedor">
+
+<h1>Prueba de eventos</h1>
+
+<img src="imgs/arbol.jpg" width="250" height="175" id="imagen1">
+
+
+<li id="lista1"> El Real Madrid campeóon de la champions league 2017/18</li>
+<li id="lista2"> El Barcelona campeón de liga y copa 2017/18 </li>
+<li id="lista3"> Grecia arde por los 4 costados </li>
+<li id="lista4"> Salto masivo a la valla de Ceuta</li>
+
+<br>
+
+<form name="pruebaeventos" id="formulario" method="get">
+Nombre: &nbsp <input type="text" name"nombre" value="" id="nombre"> </input>
+</form>
+
+<p id="parrafo1">
+El Real Madrid ha sido el flamante vencedor de la champions league de la temporada 2017/18, ganando en la final al Liverpool FC 
+por un contundente 3-1, con goles de Benzemá y Bale por partida doble.
+</p>
+<p id="parrafo2">
+El FC Barcelona se ha proclamado campeón de liga y compa de la temporada 2017/18. La liga ha sido un paseo para el Barcelona, ya que
+el resto de equipos se descolgaron rápidamente. La final de la copa del rey supuso 
+una gran victoria del Barcelona sobre el Sevilla FC
+</p>
+
+<p id ="parrafo3">
+Grecia está ardiendo por los 4 costados. Un incendio al parecer provocado con varios focos activos ha arrasado montones 
+de viviendasy ha causado gran cantidad de víctimas y heridos.
+</p>
+
+<p id="parrafo4">
+Cientos de migrantes han protagonizado un salto por la valla de Ceuta, creando varios migrantes heridos y varios Guardias Civiles. 
+Los migrantes han sido alojados para su evaluación.
+</p>
+
+
+</div>
+
+</body>
+</html>

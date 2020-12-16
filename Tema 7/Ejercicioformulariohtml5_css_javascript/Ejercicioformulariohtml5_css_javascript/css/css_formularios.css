@@ -1,0 +1,99 @@
+.contact-form {
+  --form-ok-color: #4caf50;
+  --form-error-color: #f44336;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+/* todos los hijos directos de la clase contact-form */
+.contact-form > * {
+  padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
+}
+
+/* el hijo concreto textarea de la clase contact_form que inhabilita 
+que se pueda redimensionar el textarea*/
+.contact-form textarea {
+  resize: none;
+}
+
+/* selector para la leyenda del formulario y para la clase contact-form-response */
+.contact-form legend,
+.contact-form-response {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* selector para los tipo input y textearea de la clase contac-form */
+.contact-form input,
+.contact-form textarea {
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+
+/* selector para aquellos hijos de tipo input que poseen el atributo type=submit de la clase contact-form */
+.contact-form input[type="submit"] {
+  width: 50%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Todos los elementos de la clase contact-form que contienen el atributo placeholder */
+.contact-form *::placeholder {
+  color: #000;
+}
+
+/* Todos aquellos elementos de la clase contact-form que son requeridos (obligatorios) */
+.contact-form [required]:valid {
+  border: thin solid var(--form-ok-color);
+}
+
+/* Todos aquellos elementos de la clase contact-form que no son requeridos (obligatorios) 
+en el que el se utilizar la variable form-error-color definida 
+con anterioridad (en contact-form) */
+.contact-form [required]:invalid {
+  border: thin solid var(--form-error-color);
+}
+
+/* clase contact-form-error con una transición de 8 segundos  de 
+tipo ease (rápido-lento-rápido) con -1rem de margen para que se 
+muestre pegado al elemento que lo dispara*/
+.contact-form-error {
+  margin-top: -1rem;
+  font-size: 80%;
+  background-color: var(--form-error-color);
+  color: #fff;
+  transition: all 8000ms ease;
+}
+
+/* selecciona todos los elementos de contact-form-error que tengan la clase is-active */
+.contact-form-error.is-active {
+  display: block;
+  animation: show-message 1s 1 normal 0s ease-out both;
+}
+
+.none {
+  display: none;
+}
+
+
+/* Los keyframes o fotogramas clave son reglas CSS que se irán aplicando partiendo 
+de un estado inicial de 0% hasta llegar a un estado final de 100%. 
+Para usar keyframe dentro de nuestro CSS podemos declararlo de la 
+siguiente manera: primero definimos un nombre para nuestra animación; 
+luego, dentro de ella usamos porcentajes o usando palabras reservadas para 
+establecer las propiedades CSS a cambiar como se visualiza */
+@keyframes show-message {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}

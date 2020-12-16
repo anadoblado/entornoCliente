@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prueba función ReplaceWith</title>
+<style>
+#galeria{
+	width:1475px;
+	margin:auto;
+}
+img{
+	padding:20px 30px;
+}
+#mensajes{
+	position:absolute;
+	left:600px;
+	top:300px;
+	width=500px,("#")
+	height=200px;
+	background-color:#FF5;
+	font-size:24px;
+	font-weight:bold;
+	padding:25px;
+}
+</style>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+	$("#mensajes").hide();
+	$("#imagen1").hover(pasar1,retirar1);
+	
+	function pasar1(){
+	$("#mensajes").show();
+	$("#mensaje1").show();
+	$("#mensaje2").hide();
+	$("#mensaje3").hide();
+	}
+
+	function retirar1(){
+	$("#mensajes").hide();
+	}
+
+	
+	$("#imagen2").hover(pasar2,retirar2);
+	function pasar2(){
+	$("#mensajes").show();
+	$("#mensaje1").hide();
+	$("#mensaje2").show();
+	$("#mensaje3").hide();
+	}
+
+	function retirar2(){
+	$("#mensajes").hide();
+	}
+
+
+	$("#imagen3").hover(pasar3,retirar3);
+	function pasar3(){
+	$("#mensajes").show();
+	$("#mensaje1").hide();
+	$("#mensaje2").hide();
+	$("#mensaje3").show();
+	}
+
+	function retirar3(){
+	$("#mensajes").hide();
+	}    });
+</script>
+<div id="mensajes">
+<div id="mensaje1">Esta es la imagen del árbol</div>
+<div id="mensaje2">Esta es la imagen de deportes</div>
+<div id="mensaje3">Esta es la imagen de Murillo</div>
+</div>
+
+<div id="galeria">
+<img src="imgs/arbol.jpg" width="250" height="175" id="imagen1">&nbsp
+<img src="imgs/deporte.jpg" width="250" height="175" id="imagen2">&nbsp
+<img src="imgs/murillo.jpg" width="250" height="175" id="imagen3">
+</div>
+</body>
+</html>
+

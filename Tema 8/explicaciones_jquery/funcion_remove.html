@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prueba función remove</title>
+<style>
+#banner{
+	background-color:blue;
+	width:500px;
+	height:500px;
+	position:absolute;
+	left:400px;
+	top:100 px;
+	font-size:40px;
+	text-align:center;
+}
+img{
+	float:left;
+	margin:15px;
+	width:300px;
+	height:300px;
+}
+</style>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+var baner=document.getElementById("cerrar").addEventListener("click",cerrar_baner,false);
+});
+function cerrar_baner()  {   $("#banner").remove(); };
+</script>
+</head>
+<body>
+<div id="banner">
+Publicidad
+<br> <input type="button" value="Cerrar" id="cerrar">
+</div>
+<div id="galeria">
+<img src="imgs/arbol.jpg" width="250" height="175"> &nbsp
+<img src="imgs/deporte.jpg" width="250" height="175"> &nbsp
+<img src="imgs/murillo.jpg" width="250" height="175"> 
+</div>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Formularios I</title>
+<style>
+
+body{
+	background-color:#CCF;
+}
+#principal{
+	
+	padding:10px 10px 10px 20px;
+	background-color:#DA1;	
+	box-shadow: 10px 10px 5px 0px #333333;
+	border-radius: 10px;
+}
+#mediaeso,#mediabachillerato
+{
+background-color:#DA1;
+}
+td{
+	padding-bottom:10px;
+}
+h1{
+	text-align:center;
+}
+
+
+</style>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+// comprobamos que al coger el focus el campo apellidos, se borre su contenido por defecto "Escriba sus apellidos"
+	$(document).ready(function() {
+		
+		//lo que haremos al coger el focus
+		$("#apellidos").focus(function(){
+		// recogemos en la variable campoactual el nombre del campo actual "#apellidos"
+		var campoactual=$(this);
+		//comparamos si el valor de campoactual coincide con el atributo value del campo recogido en la variable 
+		//porque puede ser que volvamos al focus con un valor ya introducido antes.
+	if (campoactual.val()==campoactual.attr("value")){
+				campoactual.val("");
+				}
+		});
+
+		$("#nombre").focus(function(){
+			var campoactual=$(this);
+			if (campoactual.val()==campoactual.attr("value")){
+					campoactual.val("");
+					}
+			});
+			
+		$("#fechanac").focus(function(){
+			var campoactual=$(this);
+			if (campoactual.val()==campoactual.attr("value")){
+					campoactual.val("");
+					}
+			});
+
+		//comprobemos validación al enviar el formulario con em método submit() de jquery
+		$("#formulario").submit(function(){
+		//comprobamos si no hemos introducido los apellidos que son obligatorios
+		if ($("#apellidos").val()=="" || $("#apellidos").val()=="Escriba sus apellidos")
+			{
+			alert("Los apellidos son obligatorios");
+			$("#apellidos").focus();
+			//para que no se envíe el valor de este campo al darle al boton enviar 
+			//porque todavía no se habrían introducido apellidos
+			return false;
+			}
+		if ($("#nombre").val()=="" || $("#nombre").val()=="Escriba su nombre")
+				{
+				alert("El nombre es obligatorio");
+				$("#nombre").focus();
+				return false;
+				}
+		if ($("#fechanac").val()=="" || $("#fechanac").val()=="dd/mm/aaaa")
+				{
+				alert("Fecha obligatoria en formato dd/mm/aaaa");
+				$("#fechanac").focus();
+				return false;
+				}
+		});
+		// Coger el valor del pais del cuadro de lista 
+		$("#pais").change(function(){		
+			alert ("Tu pais: "+$(this).val());
+		});
+		
+		//vamos a activar o desactivar la nota media de acceso de ESO o Bachillerato 
+		//según se eliga CFGM o CFGS respectivamente.
+		$("#CFGM").click(function(){
+			//activamos el campo mediaeso y le asignamos el focus. Lo he hecho con funciones encadenadas
+			$("#mediaeso").attr("disabled",false).focus().css("background-color","#FFF");
+			$("#mediabachillerato").attr("disabled",true).css("background-color","#DA1").val();
+			});
+		
+
+		//aquí sin funciones encadenadas
+		$("#CFGS").click(function(){
+			$("#mediabachillerato").attr("disabled",false).css("background-color","#FFF");
+			$("#mediaeso").focus;
+			$("#mediaeso").val("");
+			$("#mediaeso").attr("disabled",true);
+			$("#mediaeso").css("background-color","#DA1");
+			});
+		
+		//vamos a comprobar que la nota media introducida es un número cuando el campo edad deja el focus (blur)
+		$("#mediaeso").blur(function(){
+			var nota=$(this).val();
+		//comprobamos si el valor de nota no es un número con isNaN
+			if( isNaN(nota)){
+				alert("La nota media debe ser numérica");
+				$(this).focus();
+				$(this).val("");
+				};
+			});
+		$("#mediabachillerato").blur(function(){
+			var nota=$(this).val();
+			if( isNaN(nota)){
+				alert("La nota media debe ser numérica");
+				$(this).focus();
+				$(this).val("");
+				};
+			});
+	// incluir en un array los estudios marcados en las casillas de verificación
+		var estudios=new Array();
+		var i=0;
+		$(":checkbox").click(function(){
+			estudios[i]=$(this).val();
+			$("#estudios").append(estudios[i]+" ");
+			i++;
+			});
+	});
+	
+</script>
+</head>
+<body>
+<h1>Formulario matriculación</h1>
+<div id="contenedor">
+<form id="formulario">
+  <table width="40%" border="0" align="center" id="principal">
+    <tr>
+      <td>Apellidos:</td>
+      <td><label for="apellidos"></label>
+        <input type="text" name="apellidos" id="apellidos" value="Escriba sus apellidos" ></td>
+    </tr>
+    <tr>
+      <td>Nombre:</td>
+      <td><input type="text" name="nombre" id="nombre" value="Escriba su nombre"></td>
+    </tr>
+    <tr>
+      <td>Fecha Nacimiento:</td>
+      <td><input type="text" name="fechanac" id="fechanac" value="dd/mm/aaaa"></td>
+    </tr>
+	<tr>
+      <td>País:</td>
+      <td><label for="pais"></label>
+        <select name="pais" id="pais">
+          <option>España</option>
+          <option>Inglaterra</option>
+          <option>Francia</option>
+          <option>Alemania</option>
+		   <option>Otro</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td>Ciclo:</td>
+      <td><p>
+        <label>
+          <input type="radio" name="ciclo" value="CFGM" id="CFGM">
+          CFGM Sistemas Microinformáticos y Redes</label>
+        <br>
+        <label>
+          <input type="radio" name="ciclo" value="CFGS" id="CFGS">
+          CFGS Desarrollo de Aplicaciones Web</label>
+        <br>
+      </p></td>
+    </tr>
+    
+	    
+    <tr>
+      <td>Nota media acceso:</td>
+      <td><table width="200">
+        <tr>
+          <td><label for="notaeso" id="notaeso">Mota media ESO</label></td>
+          <td>
+            <input type="text" name="mediaeso" id="mediaeso" disabled></td>
+        </tr>
+        <tr>
+          <td><label for="notabachillerato" id="notabachillerato">Mota media Bachillerato</label></td>
+          <td>
+            <input type="text" name="mediabachillerato" id="mediabachillerato" disabled></td>
+        </tr>
+		</table></td>
+	</tr>
+    <tr>
+      <td>Estudios terminados:</td>
+      <td><table width="200">
+        <tr>
+          <td><label>
+            <input type="checkbox" name="eso" value="eso" id="eso">
+            ESO</label></td>
+          <td><label>
+            <input type="checkbox" name="bachillerato" value="bachillerato" id="bachillerato">
+            Bachillerato</label></td>
+        </tr>
+        <tr>
+          <td><label>
+            <input type="checkbox" name="grado" value="grado" id="grado">
+            Grado</label></td>
+          <td><label>
+            <input type="checkbox" name="master" value="master" id="master">
+            Master</label></td>
+        </tr>
+        </table></td>
+    </tr>
+    <tr>
+    <td colspan="2" align="center"><input type="submit" value="Enviar" id="enviar"></td>
+   
+    </tr>
+  </table>
+  </form>
+</div>
+
+<div id="estudios"> </div>
+
+</body>
+</html>

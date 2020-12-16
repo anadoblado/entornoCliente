@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="lista">
+        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur nisi praesentium neque voluptates eius sapiente suscipit sit quod porro veniam, voluptate aliquid dolorum quos culpa velit, ipsum dicta facere rem.</li>
+        <li>Fugit, aliquam unde asperiores eos quos maxime fuga earum consectetur iure necessitatibus praesentium quo blanditiis maiores id culpa, esse itaque doloribus vitae nesciunt vero. Deserunt maiores quasi sapiente maxime magnam!</li>
+        <li>Magni perspiciatis exercitationem non quam id porro ad sit perferendis beatae, inventore cupiditate harum numquam rerum placeat delectus est provident? Rem, corrupti possimus saepe voluptatem perferendis sapiente omnis quidem cupiditate?</li>
+        <li>Esse culpa officia delectus odit. Dolorem voluptates consequatur, dolores, nesciunt placeat sint corrupti aperiam, quis possimus aut explicabo expedita dolor itaque. Corrupti voluptates est amet aliquid iste dolore explicabo tempora.</li>
+        <li>Necessitatibus maxime architecto eligendi est hic corrupti delectus aliquam aut, a sit enim mollitia minima modi nulla doloremque iure ipsum sapiente nemo magnam tempora assumenda quod! Minus quidem quo eius.</li>
+        <li>Accusamus commodi sint nobis enim sequi, in vero consequuntur, ipsam, cum ab voluptatibus officia facilis optio odio atque deleniti sed ullam fuga. Ab neque quasi ut, accusamus dolore nihil cum?</li>
+        <li>Harum reiciendis ducimus omnis, odit tempore ipsum in sed debitis deserunt ad, eaque nihil facilis, quae illo iste culpa nulla natus quas at delectus praesentium cupiditate! Perferendis maxime provident eum.</li>
+        <li>Ad amet quia iusto facilis molestiae, quibusdam magni nulla expedita sit illo quaerat vitae aut laborum molestias obcaecati, aliquid saepe delectus eum? Officiis, fugit! Officia eveniet tempora non minima fugiat.</li>
+        <li>Eius molestias cupiditate assumenda harum odio fugiat animi consequatur porro asperiores laborum voluptas nisi quia facere incidunt enim delectus ipsam ducimus in esse, veniam eum rem beatae nesciunt. Optio, dicta.</li>
+    </ol>
+    Numero de elemento:<input type="number" id="posicion">
+    <input type="button" value="Eliminar" onclick="eliminar();">
+    <script>
+        function eliminar() {            
+            var posicion = document.getElementById("posicion").value;
+            var max = document.getElementsByTagName("li").length;
+            console.log("max: "+max);
+
+            if (posicion<1 || posicion>max || isNaN(posicion)){
+                var posicion = alert('Introduce posición del 1 al '+ max);
+            }
+            console.log("posicion: " + posicion);
+            var lista = document.getElementById("lista");
+            console.log(lista);
+            var nodo = document.getElementsByTagName('li');
+            console.log(nodo);            
+            for (let index = 0; index < nodo.length; index++) {
+                console.log("nodo[index] "+nodo[index]);
+                
+                if(index == posicion){
+                    console.log("entro");
+                    console.log("nodo[index] "+nodo[index]);
+                    console.log("posicion: " + posicion);
+                    lista.removeChild(nodo[index-1]);
+                }else{
+                    if(posicion == nodo.length){
+                    lista.removeChild(nodo[nodo.length-1]);
+                }
+                }
+               
+                
+            }
+
+            function maximo(){
+                
+                var max = document.getElementsByName("li").length;
+                
+            }
+            
+
+            
+        }
+        
+        
+    </script>
+    
+</body>
+</html>

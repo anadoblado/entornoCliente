@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prueba ejercicio each()</title>
+
+<style>
+#Enlaces{
+	width:30%;
+	margin:0 850px;
+	float:left;
+	border:red solid 2px;
+	padding:20px;
+}
+li{
+color:blue;
+}
+</style>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+$("a[href^='https://']").each(function(){
+		var link=$(this).attr("href");
+		$("#Enlaces").append("<li>"+link+"</li>");
+});
+});
+$(document).ready(function(){
+$("a[href^='http://']").each(function(){
+		var link=$(this).attr("href");
+		$("#Enlaces").append("<li>"+link+"</li>");
+});
+});
+</script>
+</head>
+<body>
+<p id="parrafo1">
+El Real Madrid ha sido el flamante vencedor de la champions league de la temporada 2017/18, ganando en la final al Liverpool FC 
+por un contundente 3-1, <a href="https://www.sport.es">Consultar marca</a>con goles de Benzemá y Bale por partida doble.
+</p>
+<p id="parrafo2">
+El FC Barcelona se ha proclamado campeón de liga y compa de la temporada 2017/18. La liga ha sido un paseo para el Barcelona, ya que
+el resto de equipos se descolgaron rápidamente. <a href="https://as.com">Consultar as</a>. La final de la copa del rey supuso 
+una gran victoria del Barcelona sobre el Sevilla FC
+</p>
+<p id ="parrafo3">
+Grecia está ardiendo por los 4 costados. <a href="http://www.elmundo.es">El mundo</a>Un incendio al parecer provocado con varios 
+focos activos ha arrasado montones de viviendasy ha causado gran cantidad de víctimas y heridos.
+</p>
+<p id="parrafo4">
+    Cientos de migrantes han protagonizado un salto por la valla de Ceuta<a href="http://www.elpais.es"> El pais </a>, creando varios migrantes heridos y varios Guardias Civiles. Los 
+    migrantes han sido alojados para su evaluación.
+</p>
+<div id="Enlaces">
+    <h2> Enlaces utilizados </h2>
+</div>
+</body>
+</html>
+    

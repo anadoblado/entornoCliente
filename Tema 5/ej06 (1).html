@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onkeydown="myFunction(event)">
+    Velocidad en X: <p id="v">0</p>
+
+    <script>
+        function myFunction(event) {
+            var velocidad = parseInt(document.getElementById("v").innerHTML);
+        var x = event.key;
+        console.log('velocidad: '+velocidad);
+        if(x=='ArrowUp'){
+            velocidad++;
+            document.getElementById("v").innerHTML =  velocidad;
+        }
+        if(x=='ArrowDown'){
+            velocidad--;
+            document.getElementById("v").innerHTML = velocidad;
+        }
+        }
+    </script>
+</body>
+</html>

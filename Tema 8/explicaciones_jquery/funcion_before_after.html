@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+	.contenedor{        
+		background-color:red          
+		}
+</style>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+		$("#obtener1").click(function(){
+			// para obtener el contenido completo del segundo contenedor
+   			alert($("#segundocontenedor").html());
+			});
+		$("#obtener2").click(function(){
+			// para sustituir el contenido del contenedor.
+			$("#segundocontenedor h1").text('Este es el párrafo que ha sustituido al texto de segundocontenedor con text');
+			});
+		$("#obtener3").click(function(){
+			// para sustituir el contenido del contenedor.
+			$("#segundocontenedor h1").text('Texto para explicar funcion .text()');
+			});
+		$("#obtener4").click(function(){
+			// para añadir por delante al contenido del contenedor, ,pero fuera del mismo.
+			$("#segundocontenedor").before("<p> este es el  párrafo añadido por delante a segundocontenedor </p>");
+			});
+		$("#obtener5").click(function(){
+			// para añadir por detrás al contenido del contenedor, pero fuera del mismo.
+			$("#segundocontenedor").after("<p> este es el segundo párrafo añadido por detrás a segundocontenedor </p>");
+			});
+
+		});
+
+</script>
+</head>
+<body>
+<form>
+<div id="primercontenedor">
+	<div id="segundocontenedor" class="contenedor">
+		<h1> Texto para explicar funcion .prepend()</h1>
+	</div>
+</div>
+<input type='button' id='obtener1' value='obtener contenido contenedor'>
+<input type='button' id='obtener2' value='reemplazar contenido contenedor'>
+<input type='button' id='obtener3' value='recuperar contenido original h1 del contenedor'>
+<input type='button' id='obtener4' value='añadir párrafo delante al contenedor'>
+<input type='button' id='obtener5' value='añadir párrafo detrás del contenedor'>
+</form>
+</body>
+</html>

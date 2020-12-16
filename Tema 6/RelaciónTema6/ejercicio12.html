@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML-Formularios múltiples</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jqueryValidation.js"></script>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Centro Educativo I.E.S. Marqués de Comares</h1>
+    <table>
+        <tr>
+            <td width="800">
+                <h3>Matriculación en el ciclo de grado medio SMR</h3>
+                <form id="primero">
+                    Apellidos: <input type="text" name="apellidos"><br><br>
+                    Nombre: <input type="text" name="nombre"><br><br>
+                    Dirección: <input type="text" name="direccion"><br><br>
+                    Sexo: <input type="radio" name="sexo" value="h"> Hombre <input type="radio" name="sexo" value="m">
+                    Mujer<br><br>
+                    Edad: <input type="number" name="edad"><br><br>
+                    Curso: <select name="curso">
+                        <option value="1">1º</option>
+                        <option value="2">2º</option>
+                    </select><br><br>
+                    Módulos en los que se matricula:<br>
+                    <input type="checkbox" name="modulos"> Entornos de desarrollo<br>
+                    <input type="checkbox" name="modulos"> Bases de datos<br>
+                    <input type="checkbox" name="modulos"> Programación<br>
+                    <input type="checkbox" name="modulos"> Implatación de sistemas operativos<br>
+                    <input type="checkbox" name="modulos"> Formación y orientación laboral<br>
+                    <input type="checkbox" name="modulos"> Desarrollo Web en Entorno Cliente<br>
+                    <input type="checkbox" name="modulos"> Desarrollo Web en Entorno Servidor<br>
+                    <input type="checkbox" name="modulos"> Despliegue de aplicaciones Web<br>
+                    <input type="checkbox" name="modulos"> Desarrollo de interfaces Web<br>
+                    <input type="checkbox" name="modulos"> Empresa e iniciativa emprendedora<br><br>
+                    Observaciones:<br>
+                    <textarea name="observaciones"></textarea><br>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Restablecer</button>
+                </form>
+            </td>
+            <td width="800">
+                <h3>Matriculación en el ciclo de grado superior DAW</h3>
+                <form id="segundo">
+                    Apellidos: <input type="text" name="apellidos"><br><br>
+                    Nombre: <input type="text" name="nombre"><br><br>
+                    Dirección: <input type="text" name="direccion"><br><br>
+                    Sexo: <input type="radio" name="sexo" value="h"> Hombre <input type="radio" name="sexo" value="m">
+                    Mujer<br><br>
+                    Edad: <input type="number" name="edad"><br><br>
+                    Curso: <select name="curso">
+                        <option value="1">1º</option>
+                        <option value="2">2º</option>
+                    </select><br><br>
+                    Módulos en los que se matricula:<br>
+                    <input type="checkbox" name="modulos"> Entornos de desarrollo<br>
+                    <input type="checkbox" name="modulos"> Bases de datos<br>
+                    <input type="checkbox" name="modulos"> Programación<br>
+                    <input type="checkbox" name="modulos"> Implatación de sistemas operativos<br>
+                    <input type="checkbox" name="modulos"> Formación y orientación laboral<br>
+                    <input type="checkbox" name="modulos"> Desarrollo Web en Entorno Cliente<br>
+                    <input type="checkbox" name="modulos"> Desarrollo Web en Entorno Servidor<br>
+                    <input type="checkbox" name="modulos"> Despliegue de aplicaciones Web<br>
+                    <input type="checkbox" name="modulos"> Desarrollo de interfaces Web<br>
+                    <input type="checkbox" name="modulos"> Empresa e iniciativa emprendedora<br><br>
+                    Observaciones:<br>
+                    <textarea name="observaciones"></textarea><br>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Restablecer</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        $(function () {
+            $("#primero").validate({
+                debug: true,
+                rules: {
+                    apellidos: {
+                        required: true,
+                        minlength: 5
+                    },
+                    nombre: {
+                        required: true,
+                        minlength: 3
+                    },
+                    direccion: {
+                        required: true,
+                        minlength: 5
+                    },
+                    sexo: {
+                        required: true,
+                    },
+                    edad: {
+                        required: true,
+                        digits: true
+                    },
+                    modulos: {
+                        required: true,
+                    }
+                },
+                messages: {
+                    apellidos: {
+                        required: "El campo apellidos es obligatorio",
+                        minlength: "La longitud mínima es 5"
+                    },
+                    nombre: {
+                        required: "El campo nombre es obligatorio",
+                        minlength: "La longitud mínima es 3"
+                    },
+                    direccion: {
+                        required: "El campo dirección es obligatorio",
+                        minlength: "La longitud mínima es 5"
+                    },
+                    sexo: {
+                        required: "El campo sexo es obligatorio",
+                    },
+                    edad: {
+                        required: "El campo edad es obligatorio",
+                        digits: "Solo se permiten dígitos"
+                    },
+                    modulos: {
+                        required: "El campo modulos es obligatorio",
+                    }
+                }
+            });
+            $("#segundo").validate({
+                debug: true,
+                rules: {
+                    apellidos: {
+                        required: true,
+                        minlength: 5
+                    },
+                    nombre: {
+                        required: true,
+                        minlength: 3
+                    },
+                    direccion: {
+                        required: true,
+                        minlength: 5
+                    },
+                    sexo: {
+                        required: true,
+                    },
+                    edad: {
+                        required: true,
+                        digits: true
+                    },
+                    modulos: {
+                        required: true,
+                    }
+                },
+                messages: {
+                    apellidos: {
+                        required: "El campo apellidos es obligatorio",
+                        minlength: "La longitud mínima es 5"
+                    },
+                    nombre: {
+                        required: "El campo nombre es obligatorio",
+                        minlength: "La longitud mínima es 3"
+                    },
+                    direccion: {
+                        required: "El campo dirección es obligatorio",
+                        minlength: "La longitud mínima es 5"
+                    },
+                    sexo: {
+                        required: "El campo sexo es obligatorio",
+                    },
+                    edad: {
+                        required: "El campo edad es obligatorio",
+                        digits: "Solo se permiten dígitos"
+                    },
+                    modulos: {
+                        required: "El campo modulos es obligatorio",
+                    }
+                }
+            });
+        });
+        $("#primero").children().focus(function () { $("#segundo").children().prop("disabled", true); });
+        $("#segundo").children().focus(function () { $("#primero").children().prop("disabled", true); });
+    </script>
+</body>
+
+</html>

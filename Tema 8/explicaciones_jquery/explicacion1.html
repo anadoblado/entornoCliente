@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+	<script>
+              // con Jquery
+    $(document).ready(function(){ 
+            var mitexto2=$("#texto").val();
+            alert("con jquery: "+mitexto2);   	   
+            });
+	</script>
+
+</head>
+<body>
+    <input type="text" id="texto" value="este es mi texto">
+<script>
+            //llamando a javascript
+        var mitexto=document.getElementById("texto").value;
+        alert("sin jquery: "+mitexto);
+</script>
+</body>
+</html>

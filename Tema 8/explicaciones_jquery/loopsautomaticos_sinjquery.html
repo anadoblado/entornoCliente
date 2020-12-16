@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Galería de Imágenes</title>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+	
+	function ocultarimagenes(){
+		var imagenes=document.querySelectorAll("#galeria img");
+		for (var i=0;i<imagenes.length;i++)	{
+			imagenes[i].style.visibility="hidden";
+			}
+	};
+	function mostrarimagenes(){
+		var imagenes=document.querySelectorAll("#galeria img");
+		for (var i=0;i<imagenes.length;i++)	{
+			imagenes[i].style.visibility="visible";
+			}
+	}
+</script>
+</head>
+<body>
+<div id="galeria">
+<img src="imgs/arbol.jpg" width="250" height="175">
+&nbsp
+<img src="imgs/deporte.jpg" width="250" height="175">
+&nbsp
+<img src="imgs/murillo.jpg" width="250" height="175">
+</div>
+
+<input type="button" id="ocultar" value="Ocultar" onclick="ocultarimagenes()">
+<input type="button" id="mostrar" value="Mostrar" onclick="mostrarimagenes()">
+
+</body>
+</html>

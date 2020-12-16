@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            text-align: center;
+            margin-top: 20%;
+        }
+        
+    </style>
+</head>
+<body id="body">
+    
+    <form>
+        <input type="text" name="foto" id="foto" onfocus="cargarImagen()" placeholder="Pulsa para cargar imagen">        
+    </form>
+    <script>
+        function cargarImagen(){
+          console.log("he ganado el foco");
+          var body = document.getElementById("body");
+          body.style.backgroundImage = "url('https://source.unsplash.com/random')";
+        }
+    </script>    
+</body>
+</html>

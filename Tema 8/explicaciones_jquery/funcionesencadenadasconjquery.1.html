@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejemplo de funciones encadenadas</title>
+<style>
+#texto{
+	background-color:#000;
+	color:#FFF;
+	font-size:24 px;
+}
+</style>
+
+<script src="jquery/jquery-1.6.3.min.js"></script>
+<script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+
+
+<script>
+$(document).ready(function(){
+//encadenarmiento de funciones tet, hide y fadeIN
+function modificar(){
+	$("#texto").width(500).height(500).text("nuevo texto en el cuadrado").fadeOut(2000).fadeIn(8000);
+	}
+document.getElementById("modificar").addEventListener('click',modificar,false);
+});
+</script>
+</head>
+
+<body>
+<div id="texto">	Texto para funciones encadenadas </div>
+<input type="button" id="modificar" value="modificar" >
+
+
+		
+</body>
+</html>

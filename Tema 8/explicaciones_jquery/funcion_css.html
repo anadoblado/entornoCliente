@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prueba función addClass</title>
+<style>
+#parrafo1,#parrafo2,#parrafo3{
+	width:20%;
+	margin:0 50px;
+	float:left;
+	border:red solid 2px;
+	padding:10px;
+}
+table{
+	width:100%;
+	margin-top:10px;
+}
+</style>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+document.getElementById("aumentar").addEventListener("click",aumentartexto,false);
+document.getElementById("disminuir").addEventListener("click",disminuirtexto,false);
+document.getElementById("darcolorrojo").addEventListener("click",darcolorrojo,false);
+document.getElementById("darcolorverde").addEventListener("click",darcolorverde,false);
+document.getElementById("ponerfondo").addEventListener("click",ponerfondo,false);
+document.getElementById("quitarfondo").addEventListener("click",quitarfondo,false);
+});
+function aumentartexto(){
+var tamaño=parseInt($("#parrafo1").css("font-size"));
+$("#parrafo1").css("font-size",tamaño+4);
+}
+function disminuirtexto(){     
+$("#parrafo1").css("font-size",parseInt($("#parrafo1").css("font-size"))-4); //sin usar variable    
+}
+function darcolorrojo(){    
+$("#parrafo2").css({'color':'red'});    
+}
+function darcolorverde(){     
+$("#parrafo2").css({'color':'green'});    
+}
+function ponerfondo(){    
+$("#parrafo3").css({'background-color':'blue'});     
+}
+function quitarfondo(){    
+$("#parrafo3").css({'background-color':'white'});    
+}
+</script>
+</head>
+<body>
+<div id="parrafo1">Este es el primer párrafo para poder comprobar el funcionamiento de la función javascript css, 
+mediante la cual podremos aumentar o disminuir el tamaño de la letra de nuestro párrafo
+<table> <tr><td style="text-align:left"><input type="button" value="Aumentar" id="aumentar"></td>
+<td style="text-align:right"><input type="button" value="Disminuir" id="disminuir"></td></tr></table></div>
+<div id="parrafo2">Este es el segundo párrafo para poder comprobar el funcionamiento de la función javascript css, 
+mediante la cual podremos cambiar el color de la letra de nuestro párrafo
+<table> <tr><td style="text-align:left"><input type="button" value="Color rojo" id="darcolorrojo"></td>
+<td style="text-align:right"><input type="button" value="Color verde" id="darcolorverde"></td></tr></table></div>
+<div id="parrafo3">Este es el tercer párrafo para poder comprobar el funcionamiento de la función javascript css, 
+mediante la cual podremos establecer un fondo para el texto o quitarlo.
+<table> <tr><td style="text-align:left"><input type="button" value="Establecer fondo" id="ponerfondo"></td>
+<td style="text-align:right"><input type="button" value="Eliminar fondo" id="quitarfondo"></td></tr></table></div>
+
+</div>
+</body>
+</html>

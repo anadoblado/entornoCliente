@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+		$("#obtener1").click(function(){
+			// para obtener el contenido completo del segundo contenedor
+   			alert($("#segundocontenedor").text());
+			});
+		$("#obtener2").click(function(){
+			// para sustituir el contenido del contenedor.
+			$("#segundocontenedor h1").text('Este es el párrafo que ha sustituido al texto de segundocontenedor con text');
+			});
+		$("#obtener3").click(function(){
+			// para sustituir el contenido del contenedor.
+			$("#segundocontenedor h1").text('Texto para explicar funcion .text()');
+			});
+		});
+
+</script>
+</head>
+<body>
+<form>
+<div id="primercontenedor">
+	<div id="segundocontenedor" class="contenedor">
+		<h1> Texto para explicar funcion .text()</h1>
+	</div>
+</div>
+<input type='button' id='obtener1' value='obtener contenido contenedor'>
+<input type='button' id='obtener2' value='reemplazar contenido contenedor'>
+<input type='button' id='obtener3' value='recuperar contenido original contenedor'>
+</form>
+</body>
+</html>

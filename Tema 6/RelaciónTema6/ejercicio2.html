@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+</head>
+
+<body>
+    <script>
+        function colorAleatorio(){
+            var x = Math.round(Math.random() * 255);
+            var y = Math.round(Math.random() * 255);
+            var z = Math.round(Math.random() * 255);
+  
+            var color = "rgb(" + x + "," + y + "," + z +")";
+            document.body.style.backgroundColor = color;
+            
+  
+            var numero = window.prompt('Introduce un número');
+
+            while(isNaN(numero) || numero === ""){
+                var numero = window.prompt('Introduce un número');
+            }
+            alert('El número introducido es: ' + numero);
+        }
+        window.onload = colorAleatorio();
+      </script>
+</body>
+
+</html>

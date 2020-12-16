@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+#texto{
+	background-color:#000;
+	color:#FFF;
+	font-size:24 px;
+}
+</style>
+<title>Ejemplo de funciones encadenadas</title>
+<script>
+		function modificar(){
+		var texto=document.getElementById("texto");
+		texto.style.width="500px";
+		texto.style.height="500px";
+		texto.innerHTML="Nuevo texto en el cuadrado";
+		}
+</script>
+</head>
+
+<body>
+<div id="texto">	Texto para funciones encadenadas </div>
+<input type="button" id="modificar" value="modificar" onclick="modificar()">
+
+
+		
+</body>
+</html>

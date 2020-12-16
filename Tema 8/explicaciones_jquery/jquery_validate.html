@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+    <title>Validación con Jquery validate</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+</head>
+<body>
+    <h1>Centro Educativo I.E.S. Marqués de Comares</h1>
+    <h2>Matriculación en el ciclo de grado superior DAW</h2>
+    <form name="formulario" id="formulario" action="#" method="post">
+         <label for="apellido">Apellidos (obligatorio) </label>
+         <input type="text" name="apellido" id="apellido" size="25" maxlength="25" >
+            <br><br>
+         <label for="nombre">Nombre (máximo 15 letras): </label>
+         <input type="text" name="nombre" id="nombre" sixe="15" maxlength="15" >
+         <br/> <br/>
+         <label for="hermanos"> Nº Hermanos(numérico): </label>
+         <input type="text" name="hermanos" id="hermanos">
+         <br/> <br/>
+         <label for="email"> email: </label>
+         <input type="email" name="email" id="email">
+         <br/> <br/>
+         <label for="fechanac">Fecha de nacimiento:</label>
+         <input type="date" name="fechanac" id="fechanac">
+         &nbsp;&nbsp;&nbsp;&nbsp
+         <label for="edad">Edad: </label>
+         <input type="text" name="edad" id="edad" size="5" maxlength="3">
+         &nbsp;&nbsp;&nbsp;&nbsp
+         <label for="estatura">Estatura: </label>
+         <input type="text" name="estatura" id="estatura" size="5" maxlength="5">
+         <br/> <br/>
+         <fieldset>
+         <legend>Sexo </legend>
+         <input type="radio" name="sexo" value="hombre">Hombre <br>
+         <input type="radio" name="sexo" value="mujer">Mujer
+        </fieldset>
+         <br/> <br/>
+         <label for="select">Curso: </label>
+         <select name="curso" id="curso">
+            <option></option>
+            <option value='1'>1º</option>
+            <option value='2'>2º</option>
+         </select>
+         <br/> <br/>
+         <fieldset>
+             <legend>Módulos en los que se matricula:</legend>
+         <input type="checkbox" name="modulos" value="APO" id="ED"> Entornos de Desarrollo<br>
+         <input type="checkbox" name="modulos" value="BD" id="BD" > Bases de Datos<br>
+         <input type="checkbox" name="modulos" value="PROG" id="PROG" > Programación<br>
+         <input type="checkbox" name="modulos" value="ISO" id="ISO" > Implantación de sistemas operativos<br>
+         <input type="checkbox" name="modulos" value="FOL" id="FOL" > Formación y orientación laboral<br>
+         <input type="checkbox" name="modulos" value="DWEC" id="DWEC" > Desarrollo Web en Entorno Cliente<br>
+         <input type="checkbox" name="modulos" value="DWES" id="DWES" > Desarrollo Web en Entorno Servidor<br>
+         <input type="checkbox" name="modulos" value="DEW" id="DEW" > Despliegue de aplicaciones Web<br>
+         <input type="checkbox" name="modulos" value="DIW" id="DIW" > Desarrollo de interfaces Web<br>
+         <input type="checkbox" name="modulos" value="EMP" id="EMP" > Empresa e iniciativa emprendedora<br>
+        </fieldset>
+         <br/> <br/>
+         <textarea name="observaciones" id="observaciones" rows="10" cols="50" >Escriba aquí un texto de 200 caracteres máximo ...</textarea>
+         <br/> <br/>
+         <input type="submit" id="Enviar" value="Enviar" /> 
+         <input type="reset"  id="reset"  value="Limpiar"/>
+     </form>
+</body>
+<script src="jquery_validate.js"></script>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Formularios I</title>
+<style>
+body{
+	background-color:#CCF;
+}
+#principal{
+	
+	padding:10px 10px 10px 20px;
+	background-color:#DA1;	
+	box-shadow: 10px 10px 5px 0px #333333;
+	border-radius: 10px;
+}
+td{
+	padding-bottom:10px;
+}
+h1{
+	text-align:center;
+}
+</style>
+<script src="video3/jquery/jquery-3.3.1.min.js"></script>
+
+<script>
+
+	$(document).ready(function() {
+	
+  
+	
+		
+		
+	});
+</script>
+</head>
+
+<body>
+<h1>Formulario</h1>
+<div id="contenedor">
+<form id="formulario">
+  <table width="25%" border="0" align="center" id="principal">
+    <tr>
+      <td>Apellidos:</td>
+      <td><label for="apellidos"></label>
+        <input type="text" name="apellidos" id="apellidos" ></td>
+    </tr>
+    <tr>
+      <td>Nombre:</td>
+      <td><input type="text" name="nombre" id="nombre"></td>
+    </tr>
+    <tr>
+      <td>Fecha Nacimiento:</td>
+      <td><input type="text" name="fechanac" id="fechanac"></td>
+    </tr>
+	<tr>
+      <td>País:</td>
+      <td><label for="pais"></label>
+        <select name="pais" id="pais">
+          <option>España</option>
+          <option>Inglaterra</option>
+          <option>Francia</option>
+          <option>Alemania</option>
+		   <option>Otro</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td>Método pago:</td>
+      <td><p>
+        <input type="radio" name="radio" id="paypal" value="paypal">
+        <label for="paypal">PayPal</label>
+      </p>
+        <p>
+          <input type="radio" name="radio" id="master" value="master">
+          <label for="master">MasterCard</label>          
+          </p>
+        <p>
+          <input type="radio" name="radio" id="visa" value="visa">
+          <label for="visa">Visa</label>
+          <br>
+        </p></td>
+    </tr>
+   
+    
+    <tr>
+      <td>Datos pago</td>
+      <td><table width="200">
+        <tr>
+          <td><label for="tarjeta" id="n_tarjeta">Nº tarjeta</label></td>
+          <td>
+            <input type="text" name="tarjeta" id="tarjeta" ></td>
+        </tr>
+        <tr>
+          <td align="left"><label for="fecha_tarjeta" id="f_tarjeta">Fecha Expiración</label></td>
+          <td>
+            <input type="text" name="fecha_tarjeta" id="fecha_tarjeta"   ></td>
+        </tr>
+        <tr>
+        <td><label for="email" id="e_mail">Email</label></td>
+        <td>
+          <input type="text" name="email" id="email"  ></td>
+        </tr>
+        
+       
+      </table></td>
+    </tr>
+     <tr>
+      <td><p>País:</p></td>
+      <td><p>
+        <label for="pais"></label>
+        <select name="pais" id="pais">
+          <option>España</option>
+          <option>México</option>
+          <option>Colombia</option>
+          <option>Perú</option>
+          <option>Chile</option>
+          <option>Argentina</option>
+        </select>
+     </td>
+    </tr>
+    <tr>
+    <td colspan="2" align="center"><input type="submit" value="Enviar" id="enviar"></td>
+   
+    </tr>
+  </table>
+  </form>
+</div>
+
+<div id="las_aficiones"></div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prueba función addClass</title>
+<style>
+	.enlacesdestacados{
+		color:red;
+		font-weight:bold;
+		margin-left:25px;
+		font-size:36px;
+	}
+	a{
+		display:block;
+		margin-botton:20px;
+		font-size:24px;
+	}
+	table{
+		text-align:center;
+		border:none;
+	}
+	td{
+		border:none;
+	}
+	#periodicos
+	{
+	position:absolute;
+	left:31px;
+	top:65px;
+	width:400px;
+	height:64px;
+	z-index:1;
+	padding-top:100px;
+	}
+	</style>
+	<script src="jquery/jquery-3.3.1.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	document.getElementById("deportes").addEventListener("click",resaltardeportes,false);
+	document.getElementById("diarios").addEventListener("click",resaltardiarios,false);
+	});
+	
+	function resaltardeportes()
+	{
+	$(".deportes").toggleClass("enlacesdestacados");
+	}
+	function resaltardiarios()
+	{
+	$(".noticias").toggleClass("enlacesdestacados");
+	}
+	</script>
+	</head>
+	<body>
+	<div id="periodicos">
+	<a href="http://www.marca.es" target="_blank" class="deportes"> Marca </a><br>
+	<a href="http://www.elmundo.es" target="_blank" class="noticias">El Mundo</a><br>
+	<a href="http://www.as.com" target="_blank" class="deportes"> As </a><br>
+	<a href="http://www.elpais.es" target="_blank" class="noticias">El Pais</a><br>
+	</div>
+	<table width="100%" border="1">
+	<tr><td>Periódicos deportivos&nbsp;<input type="checkbox" value="deportes" id="deportes"></td>
+		   <td>Diarios&nbsp;<input type="checkbox" value="diarios" id="diarios"></td>
+	</tr>
+	</body>
+	</html>

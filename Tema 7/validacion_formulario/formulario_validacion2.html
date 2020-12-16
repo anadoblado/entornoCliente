@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+    <title>HTML-Formularios  múltiples</title>
+    
+</head>
+<body>
+    <h1>Centro Educativo I.E.S. Marqués de Comares</h1>
+    <h2>Matriculación en el ciclo de grado superior DAW</h2>
+    <form name="formulario1" action="#" method="get" onsubmit="return validacion()">
+
+         <label for="apellido1">Apellidos (obligatorio) </label>
+         <input type="text" name="apellido1" id="apellido1" size="25" maxlength="25" 
+            value="Escriba aquí sus apellidos" onkeypress="return sololetras(event);" required>
+         
+         <label for="nombre1">Nombre (máximo 15 letras): </label>
+         <input type="text" name="nombre1" id="nombre1" sixe="15" maxlength="15" pattern="^[A-Za-z]+$" value="Escriba aquí su nombre" required>
+         <br/> <br/>
+
+         <label for="domicilio1">Domicilio (máximo 50 caracteres): </label>
+         <input type="text" name="domicilio1" id="domicilio1" size="50" maxlength="50" value="Escriba aquí su domicilio" required>
+         <br/> <br/>
+        
+         <label for="hermanos1"> Nº Hermanos(numérico): </label>
+         <input type="number" name="hermanos1" id="hermanos1" min="0" max="20">
+         <br/> <br/>
+         
+         <label for="fechanac1">Fecha de nacimiento:</label>
+         <input type="date" name="fechanac1" id="fechanac1" required>
+         &nbsp;&nbsp;&nbsp;&nbsp
+         
+         <label for="edad1">Edad: </label>
+         <input type="text" name="edad1" id="edad1" size="5" maxlength="3">
+         &nbsp;&nbsp;&nbsp;&nbsp
+         
+         <label for="estatura">Estatura: </label>
+         <input type="text" name="estatura1" id="estatura1" size="5" maxlength="5" required>
+         <br/> <br/>
+         
+         <label for="sexo1">Sexo: (comprobar que al menos haya algo seleccionado) </label>
+         <input type="radio" name="hobre1" value="hombre1" checked> Hombre
+         <input type="radio" name="mujer1" value="mujer1"> Mujer
+         <br/> <br/>
+         
+         <label for="select1">Curso: (selección obligatoria) </label>
+         <select name="curso1" id="curso1">
+            <option>1º</option>
+            <option>2º</option>
+         </select>
+         
+         <br/> <br/>
+         <label for="modulos1">Módulos en que se matricula: (al menos 1 módulo) </label><br>
+         <input type="checkbox" name="modulos1" value="APO" id="ED" checked> Entornos de Desarrollo<br>
+         <input type="checkbox" name="modulos1" value="BD" id="BD" checked> Bases de Datos<br>
+         <input type="checkbox" name="modulos1" value="PROG" id="PROG" checked> Programación<br>
+         <input type="checkbox" name="modulos1" value="ISO" id="ISO" checked> Implantación de sistemas operativos<br>
+         <input type="checkbox" name="modulos1" value="FOL1" id="FOL" checked> Formación y orientación laboral<br>
+         <input type="checkbox" name="modulos1" value="DWEC" id="DWEC" disabled> Desarrollo Web en Entorno Cliente<br>
+         <input type="checkbox" name="modulos1" value="DWES" id="DWES" disabled> Desarrollo Web en Entorno Servidor<br>
+         <input type="checkbox" name="modulos1" value="DEW" id="DEW" disabled> Despliegue de aplicaciones Web<br>
+         <input type="checkbox" name="modulos1" value="DIW" id="DIW" disabled> Desarrollo de interfaces Web<br>
+         <input type="checkbox" name="modulos1" value="EMP1" id="EMP" disabled> Empresa e iniciativa emprendedora<br>
+         <br/> <br/>
+         
+         <div id="info">Observaciones (Máximo 200 caracteres)</div>
+         <textarea name="observaciones1" id="observaciones1" rows="10" cols="50" onkeypress="return maximocaracteres(event, 200);" onkeyup="actualizaInfo(200);">Escriba aquí un texto de 200 caracteres máximo ...</textarea>
+         <br/> <br/>
+         <input type="submit" value="Enviar"  id="Enviar1" disabled/> 
+         <input type="reset" id="reset1">
+     </form>
+</body>
+<script src="formulario_validacion2.js"></script>
+</html>

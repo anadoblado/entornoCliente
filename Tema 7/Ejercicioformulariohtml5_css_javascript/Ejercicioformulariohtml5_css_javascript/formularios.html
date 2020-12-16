@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/css_formularios.css">
+</head>
+<body>
+<form id="formulario" class="contact-form"  action="https://formsubmit.co/tonteriasdeana@gmail.com" 
+                            method="POST" target="_blank">
+    <legend>Ejemplo de formulario</legend>
+    <input type="text" name="nombre" 
+            placeholder="Escriba aquí su nombre"
+            title="Admitidos solamente letras y espacios en blanco" 
+            pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" 
+            required><br>
+    <input type="email" name="email" 
+            placeholder="Escriba aqui su email" 
+            title="Formato de email incorrecto"
+            pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" 
+            required><br>
+    <input type="text" name="asunto" 
+            placeholder="Asunto a tratar" 
+            title="El Asunto es requerido" 
+            required><br>
+    <textarea name="Comentarios" rows="5" 
+            placeholder="Escriba aquí sus comentarios"
+            title="Ha excedido el máximo de 255 caracteres" 
+            data-pattern="^.{1,255}$" 
+            required>
+            </textarea><br>
+    <input type="submit" value="Enviar">
+        <div class="contact-form-loader none">
+            <img src="assets/cargando.gif" alt="Cargando">
+        </div>
+        <div class="contact-form-response none">
+            <p>Los datos han sido enviados</p>
+        </div>
+    <script src="modulos/modulo.js" type="module"></script>
+</form>
+</body>
+</html>

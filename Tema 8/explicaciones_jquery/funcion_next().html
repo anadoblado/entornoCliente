@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Artículos</title>
+
+
+<style type="text/css">
+
+body{
+	background-color:rgb(212, 140, 140);
+	color:#000;
+}
+
+.titulo{
+	text-align:center;
+	color:green;
+}
+.subtitulo {
+	margin-left: 25px;	
+	color:white;
+}
+.principal{
+	margin-left:200px;
+	margin-top:150px;
+	
+}
+</style>
+
+<script src="jquery/jquery-1.6.3.min.js"></script>
+
+</script>
+<script>
+$(document).ready(function(){
+$(".subtitulo").hide();
+$(".principal h2").toggle(aparecersubtitulo,ocultarsubtitulo);
+function aparecersubtitulo(){
+	$(this).next(".subtitulo").fadeIn(3000);
+	}
+function ocultarsubtitulo(){
+	$(this).next(".subtitulo").fadeOut(3000);
+	}
+});
+</script>
+
+</head>
+<body>
+
+<div>
+    <h1 class="titulo">Artículos de actualidad</h1>
+</div>
+
+<div class="principal">
+	<h2>El vandalismo dispara la quema de contenedores en barrios de Córdoba</h2>
+      <div class="subtitulo">
+        <p>El distrito Sur se llevó en 2017 la mitad de los incidentes vandálicos en enseres públicos. En los últimos cinco años
+		han ardido más de mil en la capital cordobesa, según datos de Sadeco.<br>
+		La quema de contenedores supera ya las cifras del año pasado por esta fecha. Si en julio de 2017 habían ardido 137,
+		este año hasta ese mes han sido 138, lo que significa que en Córdoba arde prácticamente un contenedor al día. En agosto, la tendencia está 
+		siendo similar a la del año pasado, ya que sin haber superado la primera quincena del mes se han quemado 12 contenedores, frente a los
+		23 que ardieron en 2017 durante todo el mes.		</p>
+      </div>
+      
+	<h2>Córdoba recicla ya más de la mitad de los residuos urbanos que genera</h2>
+      <div class="subtitulo">
+        <p>Sadeco presenta la nueva pasarela de su complejo medioambiental. La capital supera el objetivo establecido por la Unión Europea
+		para el próximo 2020. <br>
+		Córdoba recicla más del 50% de los residuos municipales que genera. De esta forma, cumple con el objetivo establecido por las 
+		directivas de la Unión Europea de cara al próximo 2020, que se sitúa en esa misma cifra. Esto ha sido posible gracias a las novedades 
+		que se implantaron, entre diciembre y enero, en el complejo de reciclaje de Sadeco.</p>
+      </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+    .contenedor{	
+        background-color:red  
+        }
+</style>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var nombre=false;
+        var usuario=false;
+        var contraseña=false;
+        $('#Enviar').attr('disabled','disabled');
+        $('#nombre').keypress(function(){
+        if($(this).val() != ''){
+            nombre=true;
+            }
+        if (nombre && usuario && contraseña){
+            $('#Enviar').removeAttr('disabled');
+            }
+        });
+        $('#usuario').keypress(function(){
+        if($(this).val() != ''){
+            usuario=true;
+            }
+         if (nombre && usuario && contraseña){
+            $('#Enviar').removeAttr('disabled');
+            }
+        });
+        $('#contraseña').keypress(function(){
+         if($(this).val() != ''){
+            contraseña=true;
+            }
+        if (nombre && usuario && contraseña){
+            $('#Enviar').removeAttr('disabled');
+            }
+        });
+       
+        
+    });
+
+    
+    </script>
+</head>
+<body>
+<form >
+    <div>
+        Nombre:
+            <input name="nombre" type="text" id="nombre" > </p>
+        Usuario:
+        <input name="usuario" type="text" id="usuario" > </p>
+        Contraseña:
+        <input name="contraseña" type="password" id="contraseña"></p>
+        <input type="submit" value="Enviar" id="Enviar" >
+    </div>
+</form>
+
+</body>
+</html>

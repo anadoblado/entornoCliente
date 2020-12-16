@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Prueba de la función  bind</title>
+<style>
+
+table{
+	text-align:center;
+	float:right;
+	margin-right:50px;
+}
+p{
+	font-size:1.3em;
+}
+#imagenaumentada {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	width: 600px;
+	height: 400px;
+	border:dotted 5px #0000FF;
+}
+</style>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+//almaceno la ruta de la imagen
+var rutaimg=$("#imagendeporte").attr("src");
+//ocultamos el marco de la imagen aumentada
+$("#imagenaumentada").hide();
+//responder con bind a un solo evento
+$("#imagendeporte").bind("click",rutaimg,abririmagen);
+});
+
+// creamos la función para abrir imagen creada como evento en el contenedor
+function abririmagen(evento){
+// que el evento no se propage para otros objetos que contengan el objeto en que estoy, es decir, 
+// para hacer clic en la imagen pero no fuera de ella.
+evento.stopPropagation();
+
+$("#imagenaumentada").fadeIn(2000);
+//reemplazamos el código html de la imagen del marco por la ruta de la imagen original
+//data sirve para acceder a la propiedad datos que hemos pasado junto al objeto, en este caso la ruta
+$("#imagenoriginal").replaceWith("<img src='"+evento.data+"' widht='600' height='400'>");
+//responder con bind a varios eventos.
+$(document).bind("click keypress",function(){
+	$("#imagenaumentada").fadeOut(2000);
+	});
+};
+
+</script>
+</head>
+<body>
+<div id="imagenaumentada">
+		<img src="" id="imagenoriginal">
+</div>
+<p>
+El servicio de Emergencias 112 Andalucía ha gestionado durante el primer semestre de este año más de 21.800 avisos en Córdoba. En concreto, han sido 21.841 notificaciones, lo que supone un 8% más que el año pasado, cuando se contabilizaron 20.219 incidencias.
+La delegada del Gobierno de la Junta, Esther Ruiz, fue la encargada ayer de dar las cifras y concretó que las asistencias sanitarias han sido las más destacadas dentro de la provincia, con un total de 10.860. Estos avisos son los más numerosos junto con los relacionados con la seguridad ciudadana, que en total fueron 3.190. Las incidencias de tráfico han sido 1.683, los accidentes de circulación 1.195 y los incendios 860. Estos han sido también los motivos más recurrentes de alerta atendidos por el servicio para la coordinación y resolución de situaciones de emergencias en los primeros seis meses del año.
+</p>
+<table border="0">
+  <tr>
+    <td><img src="imgs/deporte.jpg" width="150" height="100" id="imagendeporte"></td>
+    
+  </tr>
+</table>
+<p>
+El coordinador provincial de emergencias, José Luis Medina, explicó en que consisten los grupos en los que se clasifican los avisos, así como las diferencias que existen entre ellos. Las incidencias de tráfico son distintas a los accidentes de circulación. El primer caso está relacionado con la circulación en líneas generales, no tienen por qué estar relacionadas con un accidente. "Puede ser un corte en la vía, colapsos, etc., mientras que un accidente es cuando se produce una colisión o una alteración en la vía", explicó el coordinador.
+El incremento del 8% respecto al año pasado se debe a varios factores, aunque para la delegada del Gobierno el principal es el nivel de popularidad que ha obtenido el servicio 112 en los últimos meses. "Esta labor ha sido en parte gracias a los medios. La información tiene que llegar a todos los rincones, es un trabajo conjunto entre el Gobierno y los medios de comunicación", aseguró Ruiz. De toda Andalucía, Córdoba se encuentra en la quinta posición en cuanto a volumen de actividad. Sevilla y Málaga son las dos primeras provincias con mayor número de actuaciones, 84.520 en el primer caso y 56.292 en el segundo. Las dos siguientes en la lista son Granada, con 37.690 avisos, y Cádiz, con 36.103. Por detrás de Córdoba se encuentran Almería, con 20.762; Jaén, con 19.671; y Huelva, con 17.216 llamadas.
+El mes con más actividad en el servicio de emergencias ha sido marzo, con 3.961 incidencias atendidas al coincidir con las vacaciones de Semana Santa y el paso de varios temporales que azotaron Andalucía. Por detrás se sitúa mayo, con 3.761 casos contabilizados, coincidiendo con las fiestas populares, y finalmente enero, con 3.755 avisos. La franja horaria con más actividad es desde las 20:00 hasta las 21:00. Este tramo es el de mayor concentración de avisos al 112, según indicaron. 
+</p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<head>
+<meta charset="UTF-8">
+<title>Burbujeo de eventos</title>
+<style>
+form {
+	width: 200px;
+	height: 100px;
+    border: 1px solid red;
+    text-align: center;
+  }
+  div {
+	width: 200px;
+	height: 100px;
+    border: 1px solid rgb(89, 0, 255);
+    text-align: center;
+  }
+  p {
+	width: 200px;
+	height: 100px;
+    border: 1px solid rgb(0, 255, 115);
+    text-align: center;
+  }
+
+
+
+</style>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+document.getElementById('body').addEventListener("click", function(e){alert('Capturing body');},true); //ES%
+document.getElementById('body').addEventListener("click", e => alert('Bubbling  body'),false);  //ES6
+document.getElementById('form').addEventListener("click", e => alert('Capturing  form'), true);
+document.getElementById('form').addEventListener("click", e => alert('Bubbling  form'),false);
+document.getElementById('div').addEventListener("click", e => alert('Capturing  div'), true)
+document.getElementById('div').addEventListener("click", e => alert('Bubbling div'),false);
+document.getElementById('origen').addEventListener("click", e => alert('Capturing  Origen'), true);
+document.getElementById('origen').addEventListener("click", e => alert('Bubbling  Origen'),false);
+});
+</script>
+</head>
+<body id="body">
+	<form id="form">Form
+		<div id="div" >Div
+		  <p id="origen">Origen
+		  </p>
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function(){
+		var codigohtml=$("#segundocontenedor").html();
+		$("#obtener1").click(function(){
+			// para obtener el contenido completo del segundo contenedor
+   			alert($("#segundocontenedor").html());
+			
+			});
+		$("#obtener2").click(function(){
+			// para obtener el contenido dentro de las etiquetas h1 del segundo contenedor.
+			alert($("#segundocontenedor h1").html());
+			});
+		$("#obtener3").click(function(){
+			// para sustituir el contenido del contenedor.
+			$("#segundocontenedor").html("<p> este es el párrafo que ha sustituido al texto de segundocontenedor </p>");
+			});
+		$("#obtener4").click(function(){
+			// para recuperar  el contenido original del contenedor.
+			//$("#segundocontenedor").html("<h1> Texto para explicar funciones .html()</h1>");
+			$("#segundocontenedor").html(codigohtml);
+			});
+        });
+
+</script>
+</head>
+<body>
+<form>
+<div id="primercontenedor">
+	<div id="segundocontenedor" class="contenedor">
+		<h1> Texto para explicar función .html()</h1>
+	</div>
+</div>
+<input type='button' id='obtener1' value='obtener contenido contenedor'>
+<input type='button' id='obtener2' value='obtener contenido h1 dentro del contenedor'>
+<input type='button' id='obtener3' value='reemplazar contenido contenedor'>
+<input type='button' id='obtener4' value='recuperar contenido original'>
+</form>
+</body>
+</html>

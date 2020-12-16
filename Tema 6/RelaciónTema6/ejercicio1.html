@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Introduzca su usuario y clave...</h3>
+    <form action="">
+        <label for="">usuario: </label>
+        <input type="text" name="usuario" id="usu" placeholder="Introduce usuario"><br>
+        <label for="">clave:</label>
+        <input type="password" name="clave" id="pass" placeholder="Introduce tu clave"><br>
+
+    </form>
+    <input type="button" value="Enviar" onclick="validar();">
+    <input type="button" value="Limpiar" onclick="limpiar();">
+    <p id="demo"></p>
+</body>
+<script>
+
+    function validar() {
+        var usuario = document.getElementById("usu").value;
+        var pass = document.getElementById("pass").value;
+     
+        if (usuario == "admin" && pass == "1234") {
+            document.getElementById("demo").innerHTML = "Bienvenidos al sistema";
+        } else {
+            document.getElementById("demo").innerHTML = "Usuario y/o contraseña incorrecta";
+        }
+    }
+    function limpiar() {
+        document.getElementById("usu").value = "";
+        document.getElementById("pass").value = "";
+    }
+</script>
+
+</html>
